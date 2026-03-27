@@ -19,17 +19,13 @@ from aiogram.fsm.storage.memory import MemoryStorage
 
 # ========== НАСТРОЙКИ (ОБЯЗАТЕЛЬНО ЗАПОЛНИ!) ==========
 
-# 1. Токен от @BotFather
-BOT_TOKEN = "8601151152:AAHfsRUQdRMQVv5_kW4mdsZzF8Ls5qT0J3s"
 
-# 2. Ключ DeepSeek AI (получи на platform.deepseek.com)
-AI_KEY = "sk-c61c8ba2dc0042e2b1ff595d15c440fb"
+import os
 
-# 3. Твой Telegram ID (узнай через @userinfobot)
-ADMIN_ID = 558427600  # Замени на свой ID (например: 123456789)
-
-# 4. Настройки авто-сигналов
-AUTO_SIGNAL_INTERVAL = 300  # Интервал в секундах (300 = 5 минут)
+# Читаем из переменных окружения (для хостинга)
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8601151152:AAG4n9zII...")  # Второе значение — запасное для локальной работы
+AI_KEY = os.getenv("AI_KEY", "sk-5b23bce...")
+ADMIN_ID = int(os.getenv("ADMIN_ID", "123456789"))
 
 # ========== КОНФИГУРАЦИЯ ==========
 AI_URL = "https://api.deepseek.com/chat/completions"
